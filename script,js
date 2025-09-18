@@ -38,6 +38,7 @@ function addCart(e){
     toast.style.borderRadius = '10px';
     toast.style.zIndex = 9999;
     toast.style.fontSize = '13px';
+    toast.style.transition = 'opacity 0.3s';
     document.body.appendChild(toast);
     setTimeout(function(){
       toast.style.opacity = '0';
@@ -49,6 +50,7 @@ function addCart(e){
   }
 }
 
+// Scroll ke section dengan smooth
 function scrollToSection(id){
   var el = document.querySelector(id);
   if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
