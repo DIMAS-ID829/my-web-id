@@ -92,9 +92,9 @@ nav.main-nav ul{
 }
 .feature-card {
   display: flex;
-  flex-direction: column; /* fix: supaya gambar di atas, teks di bawah */
+  flex-direction: column;
   gap: 14px;
-  align-items: stretch;   /* fix: gambar full width */
+  align-items: stretch;
 }
 .feature-card img{
   width:100%;
@@ -107,6 +107,7 @@ nav.main-nav ul{
 .feature-card img:hover{
   filter: blur(3px);
   transform: scale(1.05);
+  cursor: pointer;
 }
 .feature-card .f-text{flex:1}
 .feature-card h4{font-size:15px;margin-bottom:6px}
@@ -171,9 +172,24 @@ nav.main-nav ul{
 .product img:hover{
   filter: blur(3px);
   transform: scale(1.05);
+  cursor: pointer;
 }
 .product .price{font-weight:700;margin-top:6px}
 .product .p-desc{color:var(--muted);font-size:14px}
+
+/* --------- Blur-on-hover for map image --------- */
+.blur-on-hover {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: filter 0.3s, transform 0.3s;
+  display: block;
+}
+.blur-on-hover:hover {
+  filter: blur(3px);
+  transform: scale(1.05);
+  cursor: pointer;
+}
 
 /* --------- Product detail (example) --------- */
 .product-detail{
