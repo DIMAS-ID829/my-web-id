@@ -55,3 +55,46 @@ function scrollToSection(id){
   var el = document.querySelector(id);
   if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
 }
+// Ads Slider Logic
+(function() {
+  const slides = document.querySelectorAll('.ad-slide');
+  const prevBtn = document.querySelector('.ad-nav.prev');
+  const nextBtn = document.querySelector('.ad-nav.next');
+  let current = 0;
+  let timer;
+
+  function showSlide(idx) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === idx);
+    });
+    current = idx;
+  }
+
+  function nextSlide() {
+    showSlide((current + 1) % slides.length);
+  }
+
+  function prevSlide() {
+    showSlide((current - 1 + slides.length) % slides.length);
+  }
+
+  function autoSlide() {
+    timer = setInterval(nextSlide, 3500);
+  }
+
+  prevBtn.addEventListener('click', () => {
+    clearInterval(timer);
+    prevSlide();
+    autoSlide();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    clearInterval(timer);
+    nextSlide();
+    autoSlide();
+  });
+
+  // Initialize
+  showSlide(0);
+  autoSlide();
+})();
