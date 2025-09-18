@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Minimal Shop / Landing UI — Clone</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="brand">FRENCH MK</div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#landing">MAIN</a></li>
+          <li><a href="#products">MKY</a></li>
+          <li><a href="#article">SUPPORT</a></li>
+          <li><button class="nav-cta" onclick="scrollToSection('#shop')">Button</button></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hambtn" aria-label="Open menu">
+        <span></span>
+      </button>
+    </header>
+
+    <!-- MOBILE NAV (hidden on desktop) -->
+    <div class="mobile-nav" id="mobilenav" style="display:none">
+      <div style="background:#fff;padding:12px;border-radius:10px;border:1px solid #eee;">
+        <a href="#landing" style="display:block;padding:8px 0">MAIN</a>
+        <a href="#products" style="display:block;padding:8px 0">SUPPORT</a>
+        <a href="#article" style="display:block;padding:8px 0">INFO</a>
+        <a href="#shop" style="display:block;padding:8px 0">BUY MY PRODUCT</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section id="landing" class="hero">
+      <div class="hero-left">
+        <h1>FRENCH FOOD</h1>
+        <p class="muted">Order here to Make your day good.</p>
+        <button class="btn-primary" onclick="scrollToSection('#products')">Order here</button>
+
+        <div style="margin-top:18px; max-width:520px">
+          <small class="muted">Short intro text. Keep it chill, keep it readable.</small>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1542445810-23e5a2238f2d?q=80&w=1400&auto=format&fit=crop" alt="hero image">
+      </div>
+    </section>
+
+    <!-- FEATURE CARDS -->
+    <section class="features" aria-label="Highlights">
+      <div>
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1000&auto=format&fit=crop" alt="">
+        <h4>Section heading</h4>
+        <p class="muted small">Body text for whatever you'd like to add more to the subheading.</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1542175279-c4c9f3b2b1d7?q=80&w=1000&auto=format&fit=crop" alt="">
+        <h4>Section heading</h4>
+        <p class="muted small">Body text for whatever you'd like to expand on the main point.</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop" alt="">
+        <h4>Section heading</h4>
+        <p class="muted small">Body text for whatever you'd like to share more.</p>
+      </div>
+    </section>
+
+    <!-- TWO COLUMN WITH BIG IMAGE RIGHT -->
+    <section class="two-col">
+      <div>
+        <h2>Section heading</h2>
+        <p class="muted">Subheading. Body text for whatever you'd like to expand on the main point. Add main takeaway points, quotes, anecdotes.</p>
+
+        <div style="margin-top:18px">
+          <h4>Subheading</h4>
+          <p class="muted small">Body text for details and context.</p>
+        </div>
+        <div style="margin-top:18px">
+          <button class="btn-primary">Button</button>
+          <button class="secondary" style="margin-left:10px">Secondary button</button>
+        </div>
+      </div>
+
+      <div>
+        <img class="card-img" src="https://images.unsplash.com/photo-1506089676908-3592f7389d4d?q=80&w=1200&auto=format&fit=crop" alt="">
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+      <h2>Section heading</h2>
+      <div class="test-grid" style="margin-top:16px">
+        <div class="tcard">
+          <p>"A terrific piece of praise"</p>
+          <div style="display:flex;align-items:center">
+            <div class="avatar"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt=""></div>
+            <div>
+              <strong>Name</strong><div class="small muted">Description</div>
+            </div>
+          </div>
+        </div>
+        <div class="tcard">
+          <p>"A fantastic bit of feedback"</p>
+          <div style="display:flex;align-items:center">
+            <div class="avatar"><img src="https://images.unsplash.com/photo-1545996124-1bcb5b3a5f7e?q=80&w=200&auto=format&fit=crop" alt=""></div>
+            <div>
+              <strong>Name</strong><div class="small muted">Description</div>
+            </div>
+          </div>
+        </div>
+        <div class="tcard">
+          <p>"A genuinely glowing review"</p>
+          <div style="display:flex;align-items:center">
+            <div class="avatar"><img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=200&auto=format&fit=crop" alt=""></div>
+            <div>
+              <strong>Name</strong><div class="small muted">Description</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band">
+      <div>
+        <h3 style="margin:0">Section heading</h3>
+        <div class="muted small">Short subheading to nudge people into action.</div>
+      </div>
+      <div>
+        <button class="btn-primary">Button</button>
+        <button class="secondary" style="margin-left:10px">Secondary button</button>
+      </div>
+    </section>
+
+    <!-- ARTICLE / POST -->
+    <section id="article" class="article">
+      <div>
+        <h2>Article or post title</h2>
+        <p class="muted small">Subheading that sets up context, shares more info about the author, or generally gets people psyched to keep reading.</p>
+
+        <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1200&auto=format&fit=crop" alt="Article image" style="margin-top:18px;border-radius:12px">
+
+        <article style="margin-top:18px;color:var(--muted)">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum efficitur, sapien sit amet dapibus dictum, orci lacus euismod magna, vitae porta ex nisl non arcu. Phasellus at sem a nibh varius fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+          <p style="margin-top:12px;">Curabitur suscipit nunc eget orci dapibus, a tempor dui ultricies. Donec gravida lorem eget erat bibendum, non pharetra sapien volutpat.</p>
+        </article>
+
+        <div style="margin-top:22px">
+          <h4>Related articles or posts</h4>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px">
+            <div style="text-align:center">
+              <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?q=80&w=800&auto=format&fit=crop" alt="" style="width:100%;height:100px;object-fit:cover;border-radius:8px">
+              <div class="small muted">Title<br><strong>Author</strong></div>
+            </div>
+            <div style="text-align:center">
+              <img src="https://images.unsplash.com/photo-1502741126161-b048400d0d7b?q=80&w=800&auto=format&fit=crop" alt="" style="width:100%;height:100px;object-fit:cover;border-radius:8px">
+              <div class="small muted">Title<br><strong>Author</strong></div>
+            </div>
+            <div style="text-align:center">
+              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=800&auto=format&fit=crop" alt="" style="width:100%;height:100px;object-fit:cover;border-radius:8px">
+              <div class="small muted">Title<br><strong>Author</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside style="padding-left:12px">
+        <div style="background:#fff;padding:16px;border-radius:12px;border:1px solid #f0f0f0">
+          <h4>Shop title</h4>
+          <p class="muted small">Subheading with description text, a small shopping blurb.</p>
+          <button class="btn-primary" style="margin-top:12px" onclick="scrollToSection('#shop')">Button</button>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SHOP HERO -->
+    <section id="shop" class="shop-hero">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1600&auto=format&fit=crop" alt="Shop hero">
+      <div class="overlay">
+        <h2>Shop title</h2>
+        <div class="sub muted">Subheading with description text, a small shopping blurb to get people hyped.</div>
+        <div style="margin-top:14px">
+          <button class="btn-primary" onclick="scrollToSection('#products')">Button</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS GRID -->
+    <section id="products">
+      <h2 style="margin-bottom:12px">Section heading</h2>
+      <div class="products-grid">
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="">
+          <strong>Product</strong>
+          <div class="p-desc small">Description of first product</div>
+          <div class="price">$10.99</div>
+          <div style="margin-top:8px">
+            <button class="add-cart" data-name="Product 1" onclick="addCart(event)">Add to cart</button>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=1200&auto=format&fit=crop" alt="">
+          <strong>Product</strong>
+          <div class="p-desc small">Description of second product</div>
+          <div class="price">$10.99</div>
+          <div style="margin-top:8px">
+            <button class="add-cart" data-name="Product 2" onclick="addCart(event)">Add to cart</button>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1476906947244-85c77f5e2d6a?q=80&w=1200&auto=format&fit=crop" alt="">
+          <strong>Product</strong>
+          <div class="p-desc small">Description of third product</div>
+          <div class="price">$10.99</div>
+          <div style="margin-top:8px">
+            <button class="add-cart" data-name="Product 3" onclick="addCart(event)">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT DETAIL EXAMPLE -->
+    <section class="product-detail" aria-label="Product detail example">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1400&auto=format&fit=crop" alt="Product big">
+      <div class="meta">
+        <h2>Product name</h2>
+        <div class="muted small">Subheading</div>
+        <div class="price-big">$10.99</div>
+        <p class="muted">Body text for describing what this product is and why this product is simply a must-buy. Add details, textures, use notes, and any small print here.</p>
+
+        <div style="margin-top:16px">
+          <button class="add-cart" data-name="Featured Product" onclick="addCart(event)">Add to cart</button>
+          <button class="secondary" style="margin-left:10px">Text details</button>
+        </div>
+
+        <div style="margin-top:18px">
+          <small class="muted">Text box for additional details or fine print</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED PRODUCTS (grid) -->
+    <section style="margin-bottom:48px">
+      <h3>Related products</h3>
+      <div style="margin-top:12px" class="products-grid">
+        <div class="product"><img src="https://images.unsplash.com/photo-1536305030015-4b1a1c8a8b78?q=80&w=1200&auto=format&fit=crop" alt=""><strong>Product</strong><div class="p-desc small">Description of first product</div><div class="price">$10.99</div></div>
+        <div class="product"><img src="https://images.unsplash.com/photo-1518051870910-a46e30d9db16?q=80&w=1200&auto=format&fit=crop" alt=""><strong>Product</strong><div class="p-desc small">Description of second product</div><div class="price">$10.99</div></div>
+        <div class="product"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop" alt=""><strong>Product</strong><div class="p-desc small">Description of third product</div><div class="price">$10.99</div></div>
+        <div class="product"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=1200&auto=format&fit=crop" alt=""><strong>Product</strong><div class="p-desc small">Description of fourth product</div><div class="price">$10.99</div></div>
+        <div class="product"><img src="https://images.unsplash.com/photo-1524594154909-3a1a3b6b7b3a?q=80&w=1200&auto=format&fit=crop" alt=""><strong>Product</strong><div class="p-desc small">Description</div><div class="price">$10.99</div></div>
+        <div class="product"><img src="https://images.unsplash.com/photo-1502741126161-b048400d0d7b?q=80&w=1200&auto=format&fit=crop" alt=""><strong>Product</strong><div class="p-desc small">Description</div><div class="price">$10.99</div></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <div class="brand">Site name</div>
+          <p class="muted small" style="margin-top:8px">Short description about the site. Keep it concise.</p>
+          <div class="socials small muted" style="margin-top:10px">   </div>
+        </div>
+
+        <div>
+          <h4>Topic</h4>
+          <div class="small muted">Page<br>Page<br>Page</div>
+        </div>
+
+        <div>
+          <h4>Topic</h4>
+          <div class="small muted">Page<br>Page<br>Page</div>
+        </div>
+
+        <div>
+          <h4>Topic</h4>
+          <div class="small muted">Page<br>Page<br>Page</div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px" class="small muted">© <span id="year"></span> Site name — All rights reserved.</div>
+    </footer>
+
+  </div>
+
+  <!-- Link to external JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
