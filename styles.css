@@ -9,6 +9,8 @@
   --radius: 12px;
   --gap: 28px;
   --transition: 200ms ease;
+  --avatar-size: 300px;
+  --avatar-inner-size: 280px;
 }
 
 *{box-sizing:border-box}
@@ -82,6 +84,66 @@ nav.main-nav ul{
 .hero .hero-left p{color:var(--muted);max-width:520px}
 .btn-primary{background:var(--primary);color:#fff;padding:12px 16px;border-radius:10px;border:none;font-weight:600;cursor:pointer;margin-top:16px}
 .hero .hero-media img{width:100%;height:360px;object-fit:cover;border-radius:16px;display:block;box-shadow:0 12px 30px rgba(0,0,0,0.08)}
+
+/* --------- Avatar (integrated) --------- */
+/* Place after :root / hero rules */
+.hero-avatar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-circle {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), #00a8a8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+  overflow: hidden; /* ensure inner image clipped to circle */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* image inside avatar */
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  transform: translateZ(0);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  will-change: transform, opacity;
+  opacity: 0; /* initial, becomes 1 on load via JS (class .loaded) */
+}
+
+/* optional inner fallback (initials) */
+.avatar-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: var(--card-bg);
+}
+
+/* hide fallback when image loaded */
+.avatar-image.loaded + .avatar-fallback,
+.avatar-fallback.hidden { display: none; }
+
+/* simple float animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
 
 /* --------- 3-card features row --------- */
 .features{
@@ -197,6 +259,47 @@ footer.site-footer{margin-top:48px;padding-top:36px;border-top:1px solid #eee}
 .footer-grid h4{font-weight:700;margin-bottom:8px}
 .socials{display:flex;gap:10px;margin-top:8px}
 
+/* --------- Mobile nav (integrated & responsive) --------- */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.6);
+  z-index: 1100;
+  padding: 20px;
+  transition: opacity 180ms ease;
+  opacity: 0;
+}
+
+/* visible state */
+.mobile-nav[data-open="true"] {
+  display: flex;
+  opacity: 1;
+}
+
+.mobile-nav__panel {
+  background: #fff;
+  width: 92%;
+  max-width: 420px;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.mobile-nav__close {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  float: right;
+  cursor: pointer;
+}
+
+.mobile-nav__panel nav { display:flex; flex-direction:column; gap:12px; margin-top:8px; }
+.mobile-nav__panel a { color:#111; text-decoration:none; padding:10px 8px; border-radius:6px; }
+.mobile-nav__panel a:focus, .mobile-nav__panel a:hover { background: rgba(0,0,0,0.04); outline: none; }
+
 /* --------- Responsive --------- */
 @media (max-width:1100px){
   .two-col{grid-template-columns:1fr}
@@ -213,7 +316,8 @@ footer.site-footer{margin-top:48px;padding-top:36px;border-top:1px solid #eee}
   .footer-grid{grid-template-columns:1fr 1fr}
   nav.main-nav ul{display:none}
   .hamburger{display:flex}
-  .mobile-nav{display:block; margin-top:12px}
+  /* mobile nav display controlled by JS via data-open */
+  .mobile-nav{display:block}
   .mobile-nav.open{display:block}
 }
 @media (max-width:480px){
