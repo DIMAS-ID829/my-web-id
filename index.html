@@ -17,8 +17,6 @@
     <!-- HEADER -->
     <header class="site-header">
       <div class="brand">DIMAS ID</div>
-       <!-- tombol toggle di header -->
-      <button id="mobileNavToggle" aria-controls="mobilenav" aria-expanded="false" aria-label="Buka menu">☰</button>
 
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
@@ -27,7 +25,16 @@
           <li><a href="#article">Story of Taste</a></li>
         </ul>
       </nav>
+      <!-- tombol toggle mobile (letakkan di akhir header) -->
+      <button id="mobileNavToggle"
+              class="mobile-nav-toggle"
+              aria-controls="mobilenav"
+              aria-expanded="false"
+              aria-label="Buka menu">
+        ☰
+      </button>
     </header>
+    
     <!-- MOBILE NAV (hidden on desktop) -->
     <div class="mobile-nav" id="mobilenav" style="display:none">
       <div style="background:#fff;padding:12px;border-radius:10px;border:1px solid #eee;">
